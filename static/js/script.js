@@ -15,9 +15,12 @@ document.addEventListener('touchstart', (e) => {
   })
 
 
-  const socailBtn = document.querySelector('.social-btn');
-  const socailList = document.querySelector('.social__list');
-  const socailArow = document.querySelector('#arow');
+  const socailBtn = document.querySelector('.social-btn'),
+  socailList = document.querySelector('.social__list'),
+  socailArow = document.querySelector('#arow'),
+  menu = document.querySelector('.header__menu-mobile');
+
+
   socailBtn.addEventListener('click', () => {
     if (socailList.classList.contains('fadeIn')) {
       socailList.classList.remove('fadeIn');
@@ -28,9 +31,21 @@ document.addEventListener('touchstart', (e) => {
       socailList.classList.add('fadeIn');
       socailArow.classList.add('rotate');  
     }
-    
   })
 
+
+  document.addEventListener('click', (e) => {
+    if (e.target.matches('.burger-btn')) {
+      menu.classList.add('header__menu-mobile--active');
+      document.body.style.overflow = 'hidden';
+    } else if (e.target.matches('.close-btn')) {
+      menu.classList.remove('header__menu-mobile--active');
+      document.body.style.overflow = '';
+    }
+  })
+
+
+  
 
 
 function navigateTo(nextId) {
