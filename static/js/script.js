@@ -1,3 +1,38 @@
+document.addEventListener('mouseover', (e) =>{
+  if (e.target.matches('.advantage__item-desc')) {
+    e.target.classList.toggle('advantage__item-desc--active')
+  }
+})
+document.addEventListener('mouseout', (e) =>{
+  if (e.target.matches('.advantage__item-desc')) {
+    e.target.classList.toggle('advantage__item-desc--active')
+  }
+})
+document.addEventListener('touchstart', (e) => {
+    if (e.target.matches('.advantage__item-desc')) {
+      e.target.classList.toggle('advantage__item-desc--active')
+    }
+  })
+
+
+  const socailBtn = document.querySelector('.social-btn');
+  const socailList = document.querySelector('.social__list');
+  const socailArow = document.querySelector('#arow');
+  socailBtn.addEventListener('click', () => {
+    if (socailList.classList.contains('fadeIn')) {
+      socailList.classList.remove('fadeIn');
+      socailList.classList.add('fadeOut');
+      socailArow.classList.remove('rotate');  
+    } else {
+      socailList.classList.remove('fadeOut');
+      socailList.classList.add('fadeIn');
+      socailArow.classList.add('rotate');  
+    }
+    
+  })
+
+
+
 function navigateTo(nextId) {
   const currentNav = document.querySelector(`.price-constructor__nav--active`);
   currentNav.classList.remove("price-constructor__nav--active");
