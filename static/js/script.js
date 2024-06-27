@@ -9,8 +9,14 @@ document.addEventListener('mouseout', (e) =>{
   }
 })
 document.addEventListener('touchstart', (e) => {
+  const desc = document.querySelectorAll('.advantage__item-desc')
     if (e.target.matches('.advantage__item-desc')) {
-      e.target.classList.toggle('advantage__item-desc--active')
+    desc.forEach(e => {
+      if (e.classList.contains('advantage__item-desc--active')) {
+        e.classList.remove('advantage__item-desc--active')
+      }
+    })
+      e.target.classList.add('advantage__item-desc--active');
     }
   })
 
