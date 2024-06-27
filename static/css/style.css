@@ -626,7 +626,7 @@ HERO
 
 @media (max-width: 30em) {
   .header {
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
 }
 
