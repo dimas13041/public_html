@@ -8,17 +8,18 @@ document.addEventListener('mouseout', (e) =>{
     e.target.classList.toggle('advantage__item-desc--active')
   }
 })
-document.addEventListener('touchstart', (e) => {
-  const desc = document.querySelectorAll('.advantage__item-desc')
-    if (e.target.matches('.advantage__item-desc')) {
-    desc.forEach(e => {
-      if (e.classList.contains('advantage__item-desc--active')) {
-        e.classList.remove('advantage__item-desc--active')
-      }
-    })
-      e.target.classList.add('advantage__item-desc--active');
-    }
-  })
+document.addEventListener('mouseup', (e) => {
+  e.preventDefault();
+  if (!e.target.matches('.advantage__item-desc')) return;
+
+  const activeDesc = document.querySelector('.advantage__item-desc--active');
+  if (activeDesc) {
+    activeDesc.classList.remove('advantage__item-desc--active');
+  }
+
+  e.target.classList.add('advantage__item-desc--active');
+});
+
 
 
   const socailBtn = document.querySelector('.social-btn'),
